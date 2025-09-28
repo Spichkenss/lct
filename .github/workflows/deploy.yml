@@ -22,7 +22,7 @@ jobs:
         with:
           host: "188.68.223.222"
           username: "deploy"
-          key: ${{ variables.SSH_KEY }}
+          key: ${{ env.SSH_KEY }}
           script: |
             cd /home/$DEPLOY_USER/app
             git fetch --all
