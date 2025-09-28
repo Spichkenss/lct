@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Host: ${{ secrets.SSH_HOST }}"
+          echo "Host: ${{ secrets.ssh_host }}"
           echo "User: ${{ secrets.SSH_USER }}"
 
       - name: Checkout code
