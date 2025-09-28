@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx run-many --target=serve --projects=api,web --parallel",
-    "build": "nx run-many --target=build --projects=api,web --parallel",
-    "start:prod": "concurrently \"node dist/apps/api/main.js\" \"serve -s dist/apps/web -l 8080\""
+    "dev:web": "nx serve web",
+    "dev:api": "nx serve api",
+    "build:web": "nx build web",
+    "build:api": "nx build api",
+    "start:api": "node dist/apps/api/main.js",
+    "dev:parallel": "nx run-many --target=serve --projects=web,api --parallel"
   },
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.0",
-    "@nx/eslint": "21.5.3",
+    "@nx/eslint": "^21.5.3",
     "@nx/eslint-plugin": "21.5.3",
     "@nx/js": "21.5.3",
     "@nx/nest": "^21.5.3",
@@ -25,12 +28,11 @@
     "@swc/cli": "~0.6.0",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
-    "@types/node": "20.19.9",
+    "@types/node": "^24.5.2",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/ui": "^3.0.0",
-    "concurrently": "^9.2.1",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-import": "2.31.0",
@@ -42,7 +44,6 @@
     "nx": "21.5.3",
     "prettier": "^2.6.2",
     "sass": "^1.55.0",
-    "serve": "^14.2.5",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.40.0",
@@ -61,6 +62,7 @@
     "axios": "^1.6.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-router-dom": "6.29.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0"
   }
