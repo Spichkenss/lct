@@ -1,0 +1,16 @@
+node_modules
+dist
+.git
+.idea
+coverage
+logs
+*.log
+npm-debug.log
+.nx
+apps/**/node_modules
+packages/**/node_modules
+**/.env
+# Keep lockfiles in the build context for reproducible installs
+# package-lock.json
+# pnpm-lock.yaml
+# yarn.locknode_modules

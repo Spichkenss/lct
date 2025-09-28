@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nx-fullstack:latest
+    ports:
+      - '3000:3000' # API (NestJS)
+      - '8080:8080' # Web (статик)
+    environment:
+      NODE_ENV: production
+      # Добавь свои переменные:
+      # DATABASE_URL: postgres://...
+      # JWT_SECRET: ...
+    restart: unless-stopped
