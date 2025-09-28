@@ -27,4 +27,4 @@ RUN npm ci --omit=dev
 COPY --from=build /workspace/apps/api/dist ./apps/api/dist
 
 EXPOSE 3000
-CMD ["node", "/apps/api/dist/main.js"]
+CMD ["node", "/app/apps/api/dist/main.js"]

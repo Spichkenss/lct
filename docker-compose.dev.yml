@@ -1,4 +1,4 @@
-name: nx-stack-dev
+name: lct-dev
 
 services:
   web:

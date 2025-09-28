@@ -1,4 +1,4 @@
-name: nx-stack-prod
+name: lct-prod
 
 services:
   web:
