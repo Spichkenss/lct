@@ -8,17 +8,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo "Host: ${{ secrets.SSH_HOST }}"
+          echo "User: ${{ secrets.SSH_USER }}"
+
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Deploy over SSH
         uses: appleboy/ssh-action@v1.2.0
+        env:
+          DEPLOY_USER: ${{ secrets.SSH_USER }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /home/${{ secrets.SSH_USER }}/app
+            cd /home/$DEPLOY_USER/app
             git fetch --all
             git reset --hard origin/main
             docker compose -f docker-compose.prod.yml down
