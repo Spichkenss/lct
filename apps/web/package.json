@@ -1,5 +1,16 @@
 {
   "name": "@lct/web",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@mantine/charts": "^8.3.2",
+    "@mantine/core": "^8.3.2",
+    "@mantine/dates": "^8.3.2",
+    "@mantine/hooks": "^8.3.2",
+    "@mantine/modals": "^8.3.2",
+    "@mantine/notifications": "^8.3.2",
+    "@tabler/icons-react": "^3.35.0",
+    "dayjs": "^1.11.18",
+    "recharts": "^3.2.1"
+  }
 }
