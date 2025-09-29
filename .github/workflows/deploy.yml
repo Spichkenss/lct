@@ -20,7 +20,8 @@ jobs:
         with:
           host: "188.68.223.222"
           username: "deploy"
-          key: ${{ secrets.SSH_key }}
+          # tmp solution since secrets dont work
+          password: "JQkhVFj8OUfefOaz"
           script: |
             cd /home/$DEPLOY_USER/app
             git fetch --all
