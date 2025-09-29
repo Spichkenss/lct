@@ -7,7 +7,7 @@ services:
       dockerfile: apps/web/Dockerfile
       target: prod
     ports:
-      - '8080:80'
+      - '80:80'
     environment:
       - NODE_ENV=production
     depends_on:
