@@ -23,7 +23,7 @@ jobs:
           # tmp solution since secrets dont work
           password: "JQkhVFj8OUfefOaz"
           script: |
-            cd /home/$DEPLOY_USER/app
+            cd /home/deploy/app
             git fetch --all
             git reset --hard origin/main
             docker compose -f docker-compose.prod.yml down
