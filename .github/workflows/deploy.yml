@@ -18,11 +18,9 @@ jobs:
       - name: Deploy over SSH
         uses: appleboy/ssh-action@v1.2.0
         env:
-          DEPLOY_USER: "deploy"
-        with:
           host: "188.68.223.222"
           username: "deploy"
-          key: ${{ secrets.SSH_key }}
+          key: ${{ secrets.KEY }}
           script: |
             cd /home/$DEPLOY_USER/app
             git fetch --all
