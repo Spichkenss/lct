@@ -15,9 +15,8 @@ CMD ["npx", "nx", "serve", "web", "--host", "0.0.0.0"]
 
 # ---------- build ----------
 FROM base AS build
-COPY package*.json ./
-RUN npm ci
 COPY . .
+RUN npm ci
 RUN npm run build:web
 
 # ---------- prod (nginx) ----------
